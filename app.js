@@ -5,6 +5,9 @@ const env=require('dotenv');
 // enable project to read .env
 env.config();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.use(require('./routes/routes'));
 
 const db = require('./engine/db');
